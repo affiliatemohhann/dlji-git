@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace DEALJI_THEME;
 
-if (! defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
@@ -35,7 +35,7 @@ final class Assets {
 	 * Get the singleton instance.
 	 */
 	public static function instance(): self {
-		if (null === self::$instance) {
+		if ( null === self::$instance ) {
 			self::$instance = new self();
 		}
 
@@ -46,13 +46,13 @@ final class Assets {
 	 * Register asset hooks.
 	 */
 	public function boot(): void {
-		if ($this->booted) {
+		if ( $this->booted ) {
 			return;
 		}
 
 		$this->booted = true;
 
-		add_action('wp_enqueue_scripts', array($this, 'enqueue_frontend_assets'));
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_assets' ) );
 	}
 
 	/**
@@ -81,6 +81,6 @@ final class Assets {
 	 * Prevent unserialization.
 	 */
 	public function __wakeup(): void {
-		_doing_it_wrong(__METHOD__, esc_html__('Unserializing the assets singleton is not allowed.', 'dealji'), '0.1.0');
+		_doing_it_wrong( __METHOD__, esc_html__( 'Unserializing the assets singleton is not allowed.', 'dealji' ), '0.1.0' );
 	}
 }

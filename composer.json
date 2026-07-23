@@ -1,6 +1,6 @@
 {
 	"name": "dealji/theme",
-	"description": "Dealji Next WordPress classic theme for affiliate marketing content.",
+	"description": "Dealji WordPress classic theme for affiliate marketing content.",
 	"type": "wordpress-theme",
 	"license": "proprietary",
 	"require": {

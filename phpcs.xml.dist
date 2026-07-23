@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="Dealji Next">
-	<description>PHPCS configuration for the Dealji Next WordPress theme.</description>
+<ruleset name="Dealji">
+	<description>PHPCS configuration for the Dealji WordPress theme.</description>
 
 	<file>.</file>
 
@@ -16,4 +16,18 @@
 	<rule ref="WordPress-Extra"/>
 	<rule ref="WordPress-Docs"/>
 	<rule ref="PHPCompatibilityWP"/>
+
+	<!-- Preserve Composer PSR-4 class filenames under inc/. -->
+	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
+		<exclude-pattern>*/inc/Assets.php</exclude-pattern>
+		<exclude-pattern>*/inc/Theme.php</exclude-pattern>
+		<exclude-pattern>*/inc/PostTypes/ProductPostType.php</exclude-pattern>
+		<exclude-pattern>*/inc/Taxonomies/ProductTaxonomies.php</exclude-pattern>
+	</rule>
+	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
+		<exclude-pattern>*/inc/Assets.php</exclude-pattern>
+		<exclude-pattern>*/inc/Theme.php</exclude-pattern>
+		<exclude-pattern>*/inc/PostTypes/ProductPostType.php</exclude-pattern>
+		<exclude-pattern>*/inc/Taxonomies/ProductTaxonomies.php</exclude-pattern>
+	</rule>
 </ruleset>
